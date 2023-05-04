@@ -50,4 +50,4 @@ public:
         return true;
     }
 };
-// this is C++ code
+// this is C++
