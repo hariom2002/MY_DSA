@@ -5,6 +5,7 @@ public:
     {
         int high = nums.size() - 1;
         int low = 0;
+
         int idx = -1;
         while (high >= low)
         {
