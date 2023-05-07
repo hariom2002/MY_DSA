@@ -7,6 +7,7 @@ public:
         if (high >= low)
         {
             int mid = low + (high - low) / 2;
+
             if (nums[mid] == x)
                 return mid;
             if (nums[mid] < x)
