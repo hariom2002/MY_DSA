@@ -5,7 +5,7 @@ public:
     {
         int high = nums.size() - 1;
         int low = 0;
-
+        // applying the binary search
         int idx = -1;
         while (high >= low)
         {
