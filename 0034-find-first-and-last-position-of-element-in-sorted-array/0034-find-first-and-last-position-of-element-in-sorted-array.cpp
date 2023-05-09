@@ -39,5 +39,4 @@ public:
 
         return res;
     }
-    // here the code ended
 };
