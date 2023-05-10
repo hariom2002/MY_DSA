@@ -38,6 +38,5 @@ public:
         res.push_back(l_idx);
         res.push_back(r_idx);
         return res;
-        //  the code ends here
-    }
+        }
 };
