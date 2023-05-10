@@ -22,6 +22,9 @@ public:
         }
         int minTime = 0;
         int time = 0;
+        
+        int dellRow[4] = {-1, +1, 0, 0};
+        int dellCol[4] = {0, 0, -1, +1};
         while(!q.empty()){
             
             auto itr = q.front();
@@ -30,22 +33,15 @@ public:
             int col = itr.first.second;
             time = itr.second;
             
-            if(row+1 < grid.size() && vis[row+1][col]!=2 && grid[row+1][col] == 1){
-                vis[row+1][col] = 2;
-                q.push({{row+1, col}, time+1});
-            }
-            if(row-1 >= 0  && vis[row-1][col]!=2 &&  grid[row-1][col] == 1){
-                vis[row-1][col] = 2;
-                q.push({{row-1, col}, time+1});
-            }
-            if(col+1 < grid[0].size()  && vis[row][col+1]!=2 && grid[row][col+1] == 1){
-                vis[row][col+1] = 2;
-                q.push({{row, col+1}, time+1});
+            for(int i=0;i<4;i++){
                 
-            }
-            if(col-1 >= 0  && vis[row][col-1]!=2 && grid[row][col-1] == 1){
-                vis[row][col-1] = 2;
-                q.push({{row, col-1}, time+1});
+                int nRow = row + dellRow[i];
+                int nCol = col + dellCol[i];
+                
+               if(nRow < grid.size() && nRow >= 0 && nCol < grid[0].size() && nCol >= 0 && vis[nRow][nCol]!=2 &&  grid[nRow][nCol] == 1){
+                vis[nRow][nCol] = 2;
+                q.push({{nRow, nCol}, time+1});
+                }
             }
             
         }
