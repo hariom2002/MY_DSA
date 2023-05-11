@@ -24,4 +24,3 @@ public:
         return idx + 1;
     }
 };
-//

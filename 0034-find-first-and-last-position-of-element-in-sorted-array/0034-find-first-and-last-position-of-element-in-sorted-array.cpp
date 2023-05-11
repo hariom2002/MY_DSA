@@ -37,6 +37,7 @@ public:
         res.clear();
         res.push_back(l_idx);
         res.push_back(r_idx);
+
         return res;
-        }
+    }
 };
