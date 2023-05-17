@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[ar]]></content>
+	#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int main() {
+#ifndef ONLINE_JUDGE
+	// for getting input from input.txt
+	freopen("input1.txt", "r", stdin);
+	// for writint output to output1.txt
+	freopen("output1.txt", "w", stdout);
+#endif
+
+	
+	cout<<"Hello world!"<<endl;
+}
+
+
+
+</snippet>
