@@ -6,7 +6,7 @@ public:
 
         int low = 0;
         int high = nums.size() - 1, mid;
-        //
+        //  binary serach begins here
         while (high >= low)
         {
 
