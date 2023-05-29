@@ -6,7 +6,7 @@ public:
 
         int low = 0;
         int high = nums.size() - 1, mid;
-        //
+        //  hello here
         while (high >= low)
         {
 
