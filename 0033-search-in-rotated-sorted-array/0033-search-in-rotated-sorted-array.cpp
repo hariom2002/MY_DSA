@@ -6,7 +6,7 @@ public:
 
         int low = 0;
         int high = nums.size() - 1, mid;
-        //  code for binary search
+        //
         while (high >= low)
         {
 
