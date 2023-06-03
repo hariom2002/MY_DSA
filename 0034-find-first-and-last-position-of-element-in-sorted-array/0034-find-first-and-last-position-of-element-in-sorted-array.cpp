@@ -1,5 +1,5 @@
 class Solution
-    // {code begins here
+    // {
     public : int
              binarySearch(vector<int> &nums, int low, int high, int x)
 {
