@@ -5,7 +5,7 @@ public:
     {
 
         int low = 0;
-        int high = nums.size() - 1, mid;
+        // int high = nums.size() - 1, mid;
         //  code
         while (high >= low)
         {
