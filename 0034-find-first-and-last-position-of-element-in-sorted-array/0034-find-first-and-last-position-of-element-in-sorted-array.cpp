@@ -8,8 +8,8 @@ public:
         {
             int mid = low + (high - low) / 2;
 
-            if (nums[mid] == x)
-                return mid;
+            // if (nums[mid] == x)
+            return mid;
             if (nums[mid] < x)
                 return binarySearch(nums, mid + 1, high, x);
             else
