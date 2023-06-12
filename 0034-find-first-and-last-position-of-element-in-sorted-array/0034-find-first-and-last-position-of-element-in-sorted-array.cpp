@@ -10,9 +10,10 @@ public:
 
             if (nums[mid] == x)
                 return mid;
-            //    if(nums[mid] < x)
-            return binarySearch(nums, mid + 1, high, x);
-            else return binarySearch(nums, low, mid - 1, x);
+            if (nums[mid] < x)
+                return binarySearch(nums, mid + 1, high, x);
+            else
+                return binarySearch(nums, low, mid - 1, x);
         }
         return -1;
     }

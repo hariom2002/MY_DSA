@@ -6,11 +6,11 @@ public:
 
         int low = 0;
         int high = nums.size() - 1, mid;
-        //  code
+        //  code be
         while (high >= low)
         {
 
-            mid = low + (high - low) / 2;
+            //    mid = low + (high - low)/2;
 
             if (nums[mid] == target)
                 return mid;
