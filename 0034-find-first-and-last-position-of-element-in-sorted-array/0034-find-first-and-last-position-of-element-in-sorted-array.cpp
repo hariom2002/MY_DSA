@@ -15,7 +15,7 @@ public:
             else
                 return binarySearch(nums, low, mid - 1, x);
         }
-        return -1;
+        //  return -1;
     }
     vector<int> searchRange(vector<int> &nums, int target)
     {
