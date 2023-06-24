@@ -5,8 +5,8 @@ public:
     {
         int high = nums.size() - 1;
         int low = 0;
-        //  creain
-        int idx = -1;
+
+        // int idx =-1;
         while (high >= low)
         {
             int mid = low + (high - low) / 2;
