@@ -7,7 +7,7 @@ public:
         int low = 0;
 
         int idx = -1;
-        while (high >= low)
+        // while (high >= low)
         {
             int mid = low + (high - low) / 2;
             if (nums[mid] == target)
