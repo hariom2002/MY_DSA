@@ -17,10 +17,10 @@ public:
         }
         return -1;
     }
-    vector<int> searchRange(vector<int> &nums, int target)
+    // vector<int> searchRange(vector<int> &nums, int target)
     {
-        //
-        // vector<int> res(2, -1);
+
+        vector<int> res(2, -1);
         int mid = binarySearch(nums, 0, nums.size() - 1, target);
         if (mid == -1)
             return res;
