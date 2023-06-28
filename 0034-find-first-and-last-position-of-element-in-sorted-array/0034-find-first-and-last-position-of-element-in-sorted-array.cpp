@@ -17,7 +17,7 @@ public:
         }
         return -1;
     }
-    // vector<int> searchRange(vector<int> &nums, int target)
+    vector<int> searchRange(vector<int> &nums, int tasrget)
     {
 
         vector<int> res(2, -1);
