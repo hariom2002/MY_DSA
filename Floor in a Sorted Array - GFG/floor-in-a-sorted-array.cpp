@@ -9,25 +9,28 @@ class Solution{
     // Function to find floor of x
     // n: size of vector
     // x: element whose floor is to find
+    
+    int lowerBound(vector<long long> arr, long long n, long long x) {
+    int low = 0, high = n - 1;
+    int ans = -1;
+
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        // maybe an answer
+        if (arr[mid] <= x) {
+            ans = mid;
+            //look for smaller index on the left
+            low = mid+1;
+        }
+        else {
+            high = mid-1; // look on the right
+        }
+    }
+    return ans;
+}
+    
     int findFloor(vector<long long> v, long long n, long long x){
-        
-       long long high = v.size()-1;
-       long long low = 0;
-       
-       int idx = -1;
-       
-       while(high>=low){
-           int mid = low+ (high-low)/2;
-           if(v[mid] == x){
-            idx = mid; break;
-           }
-           else if(v[mid] > x)high = mid-1;
-           else low=mid+1;
-           idx = mid;
-       }
-       if(idx<=0)return -1;
-       return idx;
-        
+      return lowerBound(v, n, x);
     }
 };
 
