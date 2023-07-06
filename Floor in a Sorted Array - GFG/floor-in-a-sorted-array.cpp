@@ -25,8 +25,7 @@ class Solution{
            else low=mid+1;
            idx = mid;
        }
-       if(v[idx] == x)return idx;
-       else if(idx<=0)return -1;
+       if(idx<=0)return -1;
        return idx;
         
     }
