@@ -11,8 +11,8 @@ class Solution{
   public:
     long long int floorSqrt(long long int x) 
     {
-        long long int low = 1;
-        long long int high = x;
+        int low = 1;
+        int high = x;
         
         long long int res = 0;
         
