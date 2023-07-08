@@ -1,35 +1,24 @@
 class Solution {
 public:
-    
-    long long totalHrs(vector<int> &piles, int k){
-        long long hrs = 0;
-        for(int i=0;i<piles.size();i++){
-            hrs += ceil((double)(piles[i]) / (double)(k));  
+    bool isPossible(vector<int>& piles, int k, int h){
+        int n = piles.size();
+        double hrs = 0;
+        for(int i = 0; i<n; i++){
+            hrs += ceil((double)(piles[i]) / (double)(k));
+            // if(hr>h)return false;
         }
-        // cout<<hrs<<endl;
-        return hrs;
+        return hrs<=h;
     }
     int minEatingSpeed(vector<int>& piles, int h) {
-//         applying binary search on serach space;
-        int maxx = *max_element(piles.begin(), piles.end());
-        
-        int low =1;
-        int high = maxx;
-        
-        int res = INT_MAX;
-        
-        while(high>=low){
-            
-            int mid = low+(high-low)/2;
-            long long temp_hrs = totalHrs(piles, mid);
-            if(temp_hrs <=h){
-                res = mid;
-                high = mid-1;
+        int start = 0, end = *max_element(piles.begin(), piles.end());
+        int ans =  end;
+        while(start<=end){
+            int mid = start + (end-start)/2;
+            if(isPossible(piles, mid, h)){
+                end = mid-1;
             }
-            else low=mid+1;
-            
+            else start = mid+1;
         }
-        return res;
-        
+        return start;
     }
 };
