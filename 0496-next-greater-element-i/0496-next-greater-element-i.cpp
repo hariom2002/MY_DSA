@@ -2,18 +2,14 @@ class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
         stack<int> st;
-        vector<int> res;
-        
-        map<int,int> map;
-        set<int> set;
-        for(auto s: nums1)
-            set.insert(s);
+        vector<int> res;      
+        unordered_map<int,int> map;
         
         for(int i=nums2.size()-1;i>=0;i--){
             if(!st.size()){
                 st.push(nums2[i]);
             map[nums2[i]] = -1;
-        }
+             }
                 
             else{
                 while(st.size() && st.top() <= nums2[i])
