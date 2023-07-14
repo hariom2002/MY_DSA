@@ -11,20 +11,21 @@
  */
 class Solution {
 public:
-    stack<int> st;
-    int dfs(TreeNode* root, int k){
-        if(root == NULL)return 0;
+    // stack<int> st;
+    int res;
+    void dfs(TreeNode* root, int &k){
+        if(root == NULL)return;
         
         dfs(root->left,k);
-        if(st.size() < k){
-            st.push(root->val);
-        }
-        
+        if(--k == 0){
+            res = root->val;
+            return;
+        }      
         dfs(root->right,k);
-        return st.top();
     }
     
     int kthSmallest(TreeNode* root, int k) {   
-        return dfs(root, k);
+        dfs(root, k);
+        return res;
     }
 };
