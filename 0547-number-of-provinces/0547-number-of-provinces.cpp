@@ -1,37 +1,43 @@
 class Solution {
 public:
-    int res = 0;
     int findCircleNum(vector<vector<int>>& isConnected) {
         int v = isConnected.size();
-        
-        vector<int> arrLst[v];
+        vector<int> arrLst[v+1];
         
         for(int i=0;i<v;i++){
             for(int j=0;j<v;j++){
                 if(isConnected[i][j] == 1 && i!=j){
-                    arrLst[i].push_back(j);
-                    arrLst[j].push_back(i);
+                    arrLst[i+1].push_back(j+1);
+                    arrLst[j+1].push_back(i+1);
                 }
                     
             }
         }
-        vector<bool> vis (v, false);
-        for(int i = 0;i<v;i++){
+        
+        int res = 0;   
+        vector<int> vis(v+1,0);
+        
+        for(int i=1;i<=v;i++){
             if(!vis[i]){
-                res++;
-                dfs(i,vis, arrLst);
+                // cout<<"visited "<<i<<": "<<vis[i]<<endl;
+                 res++;
+                queue<int> q;
+                vis[i] = 1;
+                q.push(i);
                 
+                while(q.size()){
+                    int node = q.front();
+                    q.pop();
+                    
+                    for(auto it:arrLst[node]){
+                        if(!vis[it]){
+                            q.push(it);
+                            vis[it] = 1;
+                        }
+                    }
+                }
             }
         }
         return res;
-    }
-    void dfs(int node,vector<bool> &vis, vector<int> graph[]){
-        
-        vis[node]= true;
-        for(auto it: graph[node]){
-            if(!vis[it]){
-                dfs(it,vis, graph); 
-            }
-        }
     }
 };
