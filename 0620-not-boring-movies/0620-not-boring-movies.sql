@@ -1,2 +1,2 @@
 # Write your MySQL query statement below
-SELECT * FROM cinema WHERE (id % 2 = 1) AND (description <> 'boring') ORDER BY rating DESC
+select * from Cinema c where (c.id%2 <> 0) and (c.description <> "boring") order by c.rating DESC;
